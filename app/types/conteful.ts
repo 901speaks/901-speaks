@@ -1,7 +1,7 @@
 export type PodcastEpisode = {
   description: string
   episodeLength: number
-  episodeNumber: string
+  episodeNumber: number
   episodeTitle: string
   releaseDate: string
   seasonNumber: number

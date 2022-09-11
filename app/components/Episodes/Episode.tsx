@@ -5,21 +5,9 @@ import {
   FaPlay,
   FaStopwatch,
 } from 'react-icons/fa'
+import { PodcastEpisode } from '~/types/conteful'
 
-export function Episode({
-  episode,
-}: {
-  episode: {
-    description: string
-    episodeLength: number
-    episodeNumber: number
-    episodeTitle: string
-    releaseDate: string
-    seasonNumber: number
-    slug: string
-    summary: string
-  }
-}) {
+export function Episode({ episode }: { episode: PodcastEpisode }) {
   return (
     <article className="card-normal card mb-20 bg-base-100 shadow-xl duration-300 ease-in-out hover:scale-105 lg:card-side">
       <figure className="pl-6">
