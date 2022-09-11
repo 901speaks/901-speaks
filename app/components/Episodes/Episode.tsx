@@ -5,13 +5,14 @@ import {
   FaPlay,
   FaStopwatch,
 } from 'react-icons/fa'
+import { BsMegaphone } from 'react-icons/bs'
 import { PodcastEpisode } from '~/types/conteful'
 
 export function Episode({ episode }: { episode: PodcastEpisode }) {
   return (
     <article className="card-normal card mb-20 bg-base-100 shadow-xl duration-300 ease-in-out hover:scale-105 lg:card-side">
       <figure className="pl-6">
-        <img src="https://placeimg.com/200/200/arch" alt="Album" />
+        <img src="/podcast-cover.png" alt="Album" className="h-40 w-40" />
       </figure>
       <div className="card-body">
         <div className="flex text-primary">
@@ -35,7 +36,7 @@ export function Episode({ episode }: { episode: PodcastEpisode }) {
         <p>{episode.summary}</p>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">
-            <FaPlay />
+            <BsMegaphone />
           </button>
         </div>
       </div>
