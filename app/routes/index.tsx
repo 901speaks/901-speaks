@@ -72,7 +72,7 @@ export default function Index() {
       </div>
       <section className="container mx-auto mt-16">
         {episodes.map((e) => (
-          <Episode key={e} />
+          <Episode key={e.episodeTitle} episode={e} />
         ))}
       </section>
     </>
