@@ -1,4 +1,7 @@
 import { rest } from 'msw'
+import { faker } from '@faker-js/faker'
+
+const NUMBER_OF_EPISODES = 12
 
 export const handlers = [
   rest.get(
@@ -9,22 +12,22 @@ export const handlers = [
 
         ctx.json({
           sys: { type: 'Array' },
-          total: 1,
+          total: NUMBER_OF_EPISODES,
           skip: 0,
           limit: 100,
-          items: [
-            {
-              description: 'string',
-              episodeLength: 'number',
-              episodeNumber: 'string',
-              episodeTitle: 'string',
-              releaseDate: 'string',
-              seasonNumber: 'number',
-              slug: 'string',
-              summary: 'string',
-              sys: {},
-            },
-          ],
+          items: Array.from(Array(NUMBER_OF_EPISODES).keys()).map(() => ({
+            description: faker.random.words(6),
+            episodeLength: `${faker.random.numeric(2)}:${faker.random.numeric(
+              2
+            )}:${faker.random.numeric(2)}`,
+            episodeNumber: faker.random.numeric(1),
+            episodeTitle: faker.random.words(6),
+            releaseDate: faker.date.recent(),
+            seasonNumber: faker.random.numeric(1),
+            slug: 'test-slug',
+            summary: faker.lorem.lines(6),
+            sys: {},
+          })),
         })
       )
     }
