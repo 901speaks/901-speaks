@@ -5,7 +5,6 @@ import {
   FaPlay,
   FaStopwatch,
 } from 'react-icons/fa'
-import { BsMegaphone } from 'react-icons/bs'
 import { PodcastEpisode } from '~/types/conteful'
 
 export function Episode({ episode }: { episode: PodcastEpisode }) {
@@ -36,7 +35,7 @@ export function Episode({ episode }: { episode: PodcastEpisode }) {
         <p>{episode.summary}</p>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">
-            <BsMegaphone />
+            <FaPlay />
           </button>
         </div>
       </div>

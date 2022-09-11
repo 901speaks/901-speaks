@@ -14,7 +14,6 @@ export async function getAllPodcastEpisodes() {
     content_type: 'episode',
     order: '-fields.releaseDate',
   })
-  console.log({ episodes })
 
   return episodes
 }

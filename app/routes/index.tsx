@@ -62,8 +62,11 @@ export default function Index() {
             <div className="flex items-center">
               <p className="mr-4 font-bold">Follow Us:</p>
               <div className="flex">
+                {/* FIXME Add link to facebook profile */}
                 <SocialIcon href="#" icon={FaFacebook} />
+                {/* FIXME Add link to twitter profile */}
                 <SocialIcon href="#" icon={FaTwitter} />
+                {/* FIXME Add link to youtube profile */}
                 <SocialIcon href="#" icon={FaYoutube} />
               </div>
             </div>

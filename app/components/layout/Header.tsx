@@ -6,7 +6,7 @@ export function Header() {
     <header className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <button className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -21,18 +21,20 @@ export function Header() {
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
-          </label>
+          </button>
           <ul className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow">
             <li>
               <Link to="/">Home</Link>
             </li>
             <li>
+              {/* FIXME Add about page */}
               <Link to="/about">About</Link>
             </li>
             <li>
               <Link to="/episodes">Episodes</Link>
             </li>
             <li>
+              {/* FIXME Add contact page */}
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
@@ -47,12 +49,14 @@ export function Header() {
             <Link to="/">Home</Link>
           </li>
           <li>
+            {/* FIXME Add about page */}
             <Link to="/about">About</Link>
           </li>
           <li>
             <Link to="/episodes">Episodes</Link>
           </li>
           <li>
+            {/* FIXME Add contact page */}
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
