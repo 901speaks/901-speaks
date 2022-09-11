@@ -37,7 +37,9 @@ export function Header() {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl normal-case">901 Speaks</a>
+        <Link className="btn btn-ghost text-2xl normal-case" to="/">
+          901 Speaks
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
