@@ -17,3 +17,18 @@ export async function getAllPodcastEpisodes() {
 
   return episodes
 }
+
+export async function getPodcastEpisodeBySlug(slug: string) {
+  const maybeEpisode = await client.getEntries<PodcastEpisode>({
+    content_type: 'episode',
+    'fields.slug': slug,
+  })
+
+  const episodeNotFound = !maybeEpisode?.items?.length
+  if (episodeNotFound) {
+    throw new Error(`Post for slug ${slug} not found`)
+  }
+
+  const foundPost = maybeEpisode.items[0]
+  return foundPost
+}

@@ -40,7 +40,7 @@ function SocialIcon({ icon: Icon, href }: { icon: IconType; href: string }) {
 
 export default function Index() {
   const { episodes } = useLoaderData<{ episodes: PodcastEpisode[] }>()
-  console.log(episodes)
+
   return (
     <>
       <div className="homepage-hero py-8">
