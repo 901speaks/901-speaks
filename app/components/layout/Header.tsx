@@ -33,10 +33,7 @@ export function Header() {
             <li>
               <Link to="/episodes">Episodes</Link>
             </li>
-            <li>
-              {/* FIXME Add contact page */}
-              <Link to="/contact">Contact</Link>
-            </li>
+            <li></li>
           </ul>
         </div>
         <Link className="btn btn-ghost text-2xl normal-case" to="/">
@@ -55,10 +52,7 @@ export function Header() {
           <li>
             <Link to="/episodes">Episodes</Link>
           </li>
-          <li>
-            {/* FIXME Add contact page */}
-            <Link to="/contact">Contact</Link>
-          </li>
+          <li></li>
         </ul>
       </div>
       <div className="navbar-end">
