@@ -48,7 +48,7 @@ export default function Index() {
           <img
             src="/podcast-cover.jpg"
             alt=""
-            className="mb-8 w-full self-center md:mb-0 md:w-auto"
+            className="mb-8 aspect-square w-full self-center md:mb-0 md:w-auto"
           />
 
           <div className="prose text-white md:pl-16">

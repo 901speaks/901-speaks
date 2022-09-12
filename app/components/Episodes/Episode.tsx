@@ -14,7 +14,7 @@ export function Episode({ episode }: { episode: PodcastEpisode }) {
         <img
           src="/podcast-cover.jpg"
           alt="Album"
-          className="h-full w-full md:h-40 md:w-40"
+          className="aspect-square h-full w-full md:h-40 md:w-40"
         />
       </figure>
       <div className="card-body mobile-only:px-0">
