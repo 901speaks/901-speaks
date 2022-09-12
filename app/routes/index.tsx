@@ -44,24 +44,20 @@ export default function Index() {
   return (
     <>
       <div className="homepage-hero py-8">
-        <div className="mx-auto flex flex-col justify-start p-4 md:container md:flex-row  md:justify-center md:px-16">
+        <div className="mx-auto flex flex-col items-center justify-start p-4 md:container  md:flex-row md:justify-center md:px-16">
           <img
             src="/podcast-cover.jpg"
             alt=""
-            className="mb-8 aspect-square w-full self-center md:mb-0 md:w-auto"
+            className="mb-8 aspect-square w-full self-center md:mb-0 md:w-96"
           />
 
           <div className="prose text-white md:pl-16">
             <h1 className="text-white">901 Speaks</h1>
             <p>
-              Struggle to fall asleep? Relax and fall to sleep with original
-              sleep meditations, Bedtime stories and Sleep hypnosis. Jump into
-              bed, press play and drift away to deep and restful sleep. Hosted
-              by Karissa Vacker, an award-winning voice and meditation guide,
-              and Jessica Porter, a hypnotherapist of 22 years bringing you two
-              original episodes per week. Sleep Wave has been designed with
-              love, to help you relax and fall asleep quickly and peacefully
-              each night, so you can wake up happ y.
+              901 Speaks is a podcast from a bar regular in downtown Memphis.
+              Hosted by Andrew Usher, the podcast has been designed to tell
+              stories and gain insights of people in the downtown Memphis
+              community, service industry or regular patron.
             </p>
             <SubscribeDropdown />
             <div className="flex items-center">
