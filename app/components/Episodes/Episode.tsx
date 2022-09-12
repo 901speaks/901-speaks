@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react'
 import dayjs from 'dayjs'
 import {
   FaCalendar,
@@ -35,7 +36,9 @@ export function Episode({ episode }: { episode: PodcastEpisode }) {
             </span>
           </div>
         </div>
-        <h2 className="card-title capitalize">{episode.episodeTitle}</h2>
+        <h2 className="card-title capitalize">
+          <Link to={`/episode/${episode.slug}`}>{episode.episodeTitle}</Link>
+        </h2>
         <p>{episode.summary}</p>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">
