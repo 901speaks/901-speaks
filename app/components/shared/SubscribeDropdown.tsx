@@ -6,16 +6,13 @@ import {
   SiRss,
 } from 'react-icons/si'
 
-export function SubscribeDropdown({
-  dropdownPosition = 'start',
-}: {
-  dropdownPosition?: 'start' | 'end'
-}) {
+export function SubscribeDropdown({ className }: { className?: string }) {
   return (
     <div
-      className={clsx('dropdown', {
-        'dropdown-end': dropdownPosition === 'end',
-      })}
+      className={clsx(
+        'dropdown-end not-prose dropdown dropdown-hover',
+        className
+      )}
     >
       <button tabIndex={0} className="btn btn-primary">
         Subscribe

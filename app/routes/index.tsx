@@ -59,7 +59,7 @@ export default function Index() {
               stories and gain insights of people in the downtown Memphis
               community, service industry or regular patron.
             </p>
-            <SubscribeDropdown />
+            <SubscribeDropdown className="dropdown-right" />
             <div className="flex items-center">
               <p className="mr-4 font-bold">Follow Us:</p>
               <div className="flex">
