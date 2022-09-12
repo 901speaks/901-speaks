@@ -12,7 +12,7 @@ export function Episode({ episode }: { episode: PodcastEpisode }) {
     <article className="card mb-20 bg-base-100 p-8 shadow-xl duration-300 ease-in-out hover:scale-105 md:p-0 lg:card-side">
       <figure className="md:pl-6">
         <img
-          src="/podcast-cover.png"
+          src="/podcast-cover.jpg"
           alt="Album"
           className="h-full w-full md:h-40 md:w-40"
         />

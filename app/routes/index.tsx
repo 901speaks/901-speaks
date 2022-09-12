@@ -15,6 +15,11 @@ export const links: LinksFunction = () => [
     rel: 'stylesheet',
     href: styles,
   },
+  {
+    rel: 'preload',
+    as: 'image',
+    href: 'podcast-cover.jpg',
+  },
 ]
 
 export const loader: LoaderFunction = async () => {
@@ -41,7 +46,7 @@ export default function Index() {
       <div className="homepage-hero py-8">
         <div className="mx-auto flex flex-col justify-start p-4 md:container md:flex-row  md:justify-center md:px-16">
           <img
-            src="/podcast-cover.png"
+            src="/podcast-cover.jpg"
             alt=""
             className="mb-8 w-full self-center md:mb-0 md:w-auto"
           />
