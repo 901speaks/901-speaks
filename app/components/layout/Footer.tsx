@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="footer items-center bg-neutral p-4 text-neutral-content">
+    <footer className="footer items-center bg-neutral p-8 text-neutral-content">
       <div className="grid-flow-col items-center">
         <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
       </div>

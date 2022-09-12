@@ -9,13 +9,17 @@ import { PodcastEpisode } from '~/types/conteful'
 
 export function Episode({ episode }: { episode: PodcastEpisode }) {
   return (
-    <article className="card-normal card mb-20 bg-base-100 shadow-xl duration-300 ease-in-out hover:scale-105 lg:card-side">
-      <figure className="pl-6">
-        <img src="/podcast-cover.png" alt="Album" className="h-40 w-40" />
+    <article className="card mb-20 bg-base-100 p-8 shadow-xl duration-300 ease-in-out hover:scale-105 md:p-0 lg:card-side">
+      <figure className="md:pl-6">
+        <img
+          src="/podcast-cover.png"
+          alt="Album"
+          className="h-full w-full md:h-40 md:w-40"
+        />
       </figure>
-      <div className="card-body">
+      <div className="card-body mobile-only:px-0">
         <div className="flex text-primary">
-          <time className="mr-4 flex items-center">
+          <time className="mr-2 flex items-center">
             <FaCalendar className="mr-2" />
             <span>{dayjs(episode.releaseDate).format('MMMM DD, YYYY')}</span>
           </time>
