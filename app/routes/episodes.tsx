@@ -5,7 +5,7 @@ import { getAllPodcastEpisodes } from '~/lib/contentful.server'
 import { PodcastEpisode } from '~/types/conteful'
 
 export const loader: LoaderFunction = async () => {
-  const { items: episodes } = await getAllPodcastEpisodes()
+  const episodes = await getAllPodcastEpisodes()
 
   return {
     episodes,
