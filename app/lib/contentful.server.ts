@@ -15,7 +15,7 @@ export async function getAllPodcastEpisodes() {
     order: '-fields.releaseDate',
   })
 
-  return episodes
+  return episodes.items.map((item) => item.fields)
 }
 
 export async function getPodcastEpisodeBySlug(slug: string) {
@@ -29,6 +29,6 @@ export async function getPodcastEpisodeBySlug(slug: string) {
     throw new Error(`Post for slug ${slug} not found`)
   }
 
-  const foundPost = maybeEpisode.items[0]
+  const foundPost = maybeEpisode.items[0].fields
   return foundPost
 }

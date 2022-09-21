@@ -17,16 +17,18 @@ export const handlers = [
             limit: 100,
             items: [
               {
-                description: faker.lorem.lines(40),
-                episodeLength: `${faker.random.numeric(
-                  2
-                )}:${faker.random.numeric(2)}:${faker.random.numeric(2)}`,
-                episodeNumber: faker.random.numeric(1),
-                episodeTitle: faker.random.words(6),
-                releaseDate: faker.date.recent(),
-                seasonNumber: faker.random.numeric(1),
-                slug: 'test-slug',
-                summary: faker.lorem.lines(6),
+                fields: {
+                  description: faker.lorem.lines(40),
+                  episodeLength: `${faker.random.numeric(
+                    2
+                  )}:${faker.random.numeric(2)}:${faker.random.numeric(2)}`,
+                  episodeNumber: faker.random.numeric(1),
+                  episodeTitle: faker.random.words(6),
+                  releaseDate: faker.date.recent(),
+                  seasonNumber: faker.random.numeric(1),
+                  slug: 'test-slug',
+                  summary: faker.lorem.lines(6),
+                },
                 sys: {},
               },
             ],
@@ -42,16 +44,18 @@ export const handlers = [
           skip: 0,
           limit: 100,
           items: Array.from(Array(NUMBER_OF_EPISODES).keys()).map(() => ({
-            description: faker.random.words(6),
-            episodeLength: `${faker.random.numeric(2)}:${faker.random.numeric(
-              2
-            )}:${faker.random.numeric(2)}`,
-            episodeNumber: faker.random.numeric(1),
-            episodeTitle: faker.random.words(6),
-            releaseDate: faker.date.recent(),
-            seasonNumber: faker.random.numeric(1),
-            slug: 'test-slug',
-            summary: faker.lorem.lines(6),
+            fields: {
+              description: faker.random.words(6),
+              episodeLength: `${faker.random.numeric(2)}:${faker.random.numeric(
+                2
+              )}:${faker.random.numeric(2)}`,
+              episodeNumber: faker.random.numeric(1),
+              episodeTitle: faker.random.words(6),
+              releaseDate: faker.date.recent(),
+              seasonNumber: faker.random.numeric(1),
+              slug: 'test-slug',
+              summary: faker.lorem.lines(6),
+            },
             sys: {},
           })),
         })

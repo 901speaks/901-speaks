@@ -9,6 +9,7 @@ import { getAllPodcastEpisodes } from '~/lib/contentful.server'
 import { useLoaderData } from '@remix-run/react'
 import { PodcastEpisode } from '~/types/conteful'
 import { SubscribeDropdown } from '~/components/shared/SubscribeDropdown'
+import { podcastDescription } from '~/constants/showInfo'
 
 export const links: LinksFunction = () => [
   {
@@ -23,7 +24,7 @@ export const links: LinksFunction = () => [
 ]
 
 export const loader: LoaderFunction = async () => {
-  const { items: episodes } = await getAllPodcastEpisodes()
+  const episodes = await getAllPodcastEpisodes()
 
   return {
     episodes,
@@ -53,12 +54,7 @@ export default function Index() {
 
           <div className="prose text-white md:pl-16">
             <h1 className="text-white">901 Speaks</h1>
-            <p>
-              901 Speaks is a podcast from a bar regular in downtown Memphis.
-              Hosted by Andrew Usher, the podcast has been designed to tell
-              stories and gain insights of people in the downtown Memphis
-              community, service industry or regular patron.
-            </p>
+            <p>{podcastDescription}</p>
             <SubscribeDropdown className="dropdown-right" />
             <div className="flex items-center">
               <p className="mr-4 font-bold">Follow Us:</p>
