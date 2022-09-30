@@ -10,7 +10,7 @@ export function SubscribeDropdown({ className }: { className?: string }) {
   return (
     <div
       className={clsx(
-        'dropdown-end not-prose dropdown dropdown-hover',
+        'not-prose dropdown dropdown-end dropdown-hover',
         className
       )}
     >
