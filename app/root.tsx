@@ -23,6 +23,21 @@ export default function App() {
   return (
     <html lang="en" className="h-full" data-theme="night">
       <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-P2BGHNVW8M"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P2BGHNVW8M');
+`,
+          }}
+        ></script>
         <Meta />
         <Links />
         <link
