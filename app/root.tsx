@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
+import { BottomNavigation } from './components/layout/BottomNavigation'
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
 import styles from './tailwind.css'
@@ -64,6 +65,7 @@ export default function App() {
         <div className="min-h-screen">
           <Outlet />
         </div>
+        <BottomNavigation />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
