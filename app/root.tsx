@@ -6,7 +6,9 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from '@remix-run/react'
+import { useEffect } from 'react'
 import { BottomNavigation } from './components/layout/BottomNavigation'
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
@@ -21,6 +23,11 @@ export const meta: MetaFunction = () => ({
 })
 
 export default function App() {
+  const location = useLocation()
+  useEffect(() => {
+    // @ts-expect-error TODO: define gtag
+    window.gtag('event', 'page_view', location.pathname)
+  }, [location])
   return (
     <html lang="en" className="h-full" data-theme="night">
       <head>
@@ -35,7 +42,9 @@ export default function App() {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-P2BGHNVW8M');
+  gtag('config', 'G-P2BGHNVW8M', {
+    send_page_view: false
+  });
 `,
           }}
         ></script>
