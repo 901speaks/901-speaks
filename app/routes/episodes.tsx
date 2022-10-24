@@ -1,4 +1,4 @@
-import { LoaderFunction } from '@remix-run/node'
+import { LoaderFunction, MetaFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 import { Episode } from '~/components/Episodes/Episode'
 import { getAllPodcastEpisodes } from '~/lib/contentful.server'
@@ -11,6 +11,10 @@ export const loader: LoaderFunction = async () => {
     episodes,
   }
 }
+
+export const meta: MetaFunction = () => ({
+  title: 'Episodes | 901 Speaks',
+})
 
 export default function Episodes() {
   const { episodes } = useLoaderData<{ episodes: PodcastEpisode[] }>()

@@ -41,7 +41,7 @@ export function SubscribeDropdown({ className }: { className?: string }) {
         </li>
         <li>
           {/* FIXME Add link to RSS feed */}
-          <a href="#" className="flex">
+          <a href="/rss.xml" className="flex">
             <SiRss />
             <span>RSS</span>
           </a>

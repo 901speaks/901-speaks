@@ -1,4 +1,4 @@
-import { json, LoaderFunction } from '@remix-run/node'
+import { json, LoaderFunction, MetaFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 import dayjs from 'dayjs'
 import { FaCalendar, FaStopwatch, FaGlobeAmericas } from 'react-icons/fa'
@@ -25,6 +25,20 @@ export const loader: LoaderFunction = async ({ params }) => {
       error,
       message: 'Error when fetching single episode',
     })
+  }
+}
+
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  if (!data) {
+    return {
+      title: 'Episode Not Found | 901 Speaks',
+    }
+  } else {
+    const { episode } = data
+    return {
+      description: episode.summary,
+      title: `${episode.episodeTitle} | 901 Speaks`,
+    }
   }
 }
 
