@@ -8,7 +8,8 @@ import {
   ScrollRestoration,
   useLocation,
 } from '@remix-run/react'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import { HydratedProvider } from './components/contexts/HydratedProvider'
 import { BottomNavigation } from './components/layout/BottomNavigation'
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
@@ -24,10 +25,17 @@ export const meta: MetaFunction = () => ({
 
 export default function App() {
   const location = useLocation()
+  const justMounted = useRef(false)
+
   useEffect(() => {
     // @ts-expect-error TODO: define gtag
     window.gtag('event', 'page_view', location.pathname)
   }, [location])
+
+  useEffect(() => {
+    justMounted.current = true
+  }, [])
+
   return (
     <html lang="en" className="h-full" data-theme="night">
       <head>
@@ -70,15 +78,17 @@ export default function App() {
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className="min-h-full bg-neutral">
-        <Header />
-        <div className="min-h-screen">
-          <Outlet />
-        </div>
-        <BottomNavigation />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-        <Footer />
+        <HydratedProvider.Provider value={justMounted.current}>
+          <Header />
+          <div className="min-h-screen">
+            <Outlet />
+          </div>
+          <BottomNavigation />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+          <Footer />
+        </HydratedProvider.Provider>
       </body>
     </html>
   )

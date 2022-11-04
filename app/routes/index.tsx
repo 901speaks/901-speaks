@@ -11,6 +11,7 @@ import { PodcastEpisode } from '~/types/conteful'
 import { SubscribeDropdown } from '~/components/shared/SubscribeDropdown'
 import { podcastDescription } from '~/constants/showInfo'
 import { motion } from 'framer-motion'
+import { useIsHydrated } from '~/components/contexts/HydratedProvider'
 
 export const links: LinksFunction = () => [
   {
@@ -20,7 +21,7 @@ export const links: LinksFunction = () => [
   {
     rel: 'preload',
     as: 'image',
-    href: 'podcast-cover.jpg',
+    href: '/podcast-cover.jpg',
   },
 ]
 
@@ -42,13 +43,14 @@ function SocialIcon({ icon: Icon, href }: { icon: IconType; href: string }) {
 
 export default function Index() {
   const { episodes } = useLoaderData<{ episodes: PodcastEpisode[] }>()
+  const isHydrated = useIsHydrated()
 
   return (
     <>
       <div className="homepage-hero py-8">
         <div className="mx-auto flex flex-col items-center justify-start p-4 md:container  md:flex-row md:justify-center md:px-16">
           <motion.img
-            initial={{ x: -200, scale: 0.4, opacity: 0.5 }}
+            initial={isHydrated ? { x: -200, scale: 0.4, opacity: 0.5 } : false}
             animate={{ x: 0, scale: 1, opacity: 1 }}
             src="/podcast-cover.jpg"
             alt=""
@@ -57,7 +59,7 @@ export default function Index() {
 
           <motion.div
             className="prose text-white md:pl-16"
-            initial={{ x: 200, scale: 0.4, opacity: 0.5 }}
+            initial={isHydrated ? { x: 200, scale: 0.4, opacity: 0.5 } : false}
             animate={{ x: 0, scale: 1, opacity: 1 }}
             transition={{ ease: 'backIn', duration: 0.25 }}
           >
