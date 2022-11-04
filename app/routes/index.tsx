@@ -10,6 +10,7 @@ import { useLoaderData } from '@remix-run/react'
 import { PodcastEpisode } from '~/types/conteful'
 import { SubscribeDropdown } from '~/components/shared/SubscribeDropdown'
 import { podcastDescription } from '~/constants/showInfo'
+import { motion } from 'framer-motion'
 
 export const links: LinksFunction = () => [
   {
@@ -46,13 +47,20 @@ export default function Index() {
     <>
       <div className="homepage-hero py-8">
         <div className="mx-auto flex flex-col items-center justify-start p-4 md:container  md:flex-row md:justify-center md:px-16">
-          <img
+          <motion.img
+            initial={{ x: -200, scale: 0.4, opacity: 0.5 }}
+            animate={{ x: 0, scale: 1, opacity: 1 }}
             src="/podcast-cover.jpg"
             alt=""
             className="mb-8 aspect-square w-full self-center md:mb-0 md:w-96"
           />
 
-          <div className="prose text-white md:pl-16">
+          <motion.div
+            className="prose text-white md:pl-16"
+            initial={{ x: 200, scale: 0.4, opacity: 0.5 }}
+            animate={{ x: 0, scale: 1, opacity: 1 }}
+            transition={{ ease: 'backIn', duration: 0.25 }}
+          >
             <h1 className="text-white">901 Speaks</h1>
             <p>{podcastDescription}</p>
             <SubscribeDropdown className="dropdown-right" />
@@ -75,7 +83,7 @@ export default function Index() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <section className="container mx-auto mt-16">
