@@ -1,14 +1,22 @@
 import { Link } from '@remix-run/react'
+import { motion } from 'framer-motion'
 import { SubscribeDropdown } from '../shared/SubscribeDropdown'
 
 export function Header() {
   return (
     <header className="navbar bg-base-100">
-      <div className="navbar-start">
+      <motion.div
+        className="navbar-start"
+        initial={{ y: -200 }}
+        animate={{ y: 0 }}
+        transition={{
+          bounce: 0,
+        }}
+      >
         <Link className="btn btn-ghost text-2xl normal-case" to="/">
           901 Speaks
         </Link>
-      </div>
+      </motion.div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
