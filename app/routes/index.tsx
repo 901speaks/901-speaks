@@ -12,6 +12,7 @@ import { SubscribeDropdown } from '~/components/shared/SubscribeDropdown'
 import { podcastDescription } from '~/constants/showInfo'
 import { motion } from 'framer-motion'
 import { useIsHydrated } from '~/components/contexts/HydratedProvider'
+import { NewsletterSignUpForm } from '~/components/shared/NewsletterSignUpForm'
 
 export const links: LinksFunction = () => [
   {
@@ -35,7 +36,7 @@ export const loader: LoaderFunction = async () => {
 
 function SocialIcon({ icon: Icon, href }: { icon: IconType; href: string }) {
   return (
-    <a href={href} className="mr-4">
+    <a href={href} className="mr-4" target="_blank" rel="noreferrer">
       <Icon size={24} fill="#fff" />
     </a>
   )
@@ -89,6 +90,7 @@ export default function Index() {
         </div>
       </div>
       <section className="container mx-auto mt-16">
+        {!episodes.length && <NewsletterSignUpForm />}
         {episodes.map((e) => (
           <Episode key={e.episodeTitle} episode={e} />
         ))}
