@@ -1,11 +1,10 @@
-import { LoaderFunction, MetaFunction } from '@remix-run/node'
+import { MetaFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 import { Episode } from '~/components/Episodes/Episode'
 import { NewsletterSignUpForm } from '~/components/shared/NewsletterSignUpForm'
 import { getAllPodcastEpisodes } from '~/lib/contentful.server'
-import { PodcastEpisode } from '~/types/conteful'
 
-export const loader: LoaderFunction = async () => {
+export const loader = async () => {
   const episodes = await getAllPodcastEpisodes()
 
   return {
@@ -18,7 +17,7 @@ export const meta: MetaFunction = () => ({
 })
 
 export default function Episodes() {
-  const { episodes } = useLoaderData<{ episodes: PodcastEpisode[] }>()
+  const { episodes } = useLoaderData<typeof loader>()
   return (
     <section className="container mx-auto mt-16">
       {!episodes.length && <NewsletterSignUpForm />}

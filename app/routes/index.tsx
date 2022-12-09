@@ -1,13 +1,11 @@
 import React from 'react'
-import type { LinksFunction } from '@remix-run/node'
+import { json, LinksFunction } from '@remix-run/node'
 import { FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa'
 import styles from '~/styles/routes/index.css'
 import { IconType } from 'react-icons'
 import { Episode } from '~/components/Episodes/Episode'
-import { LoaderFunction } from '@remix-run/node'
 import { getAllPodcastEpisodes } from '~/lib/contentful.server'
 import { useLoaderData } from '@remix-run/react'
-import { PodcastEpisode } from '~/types/conteful'
 import { SubscribeDropdown } from '~/components/shared/SubscribeDropdown'
 import { podcastDescription } from '~/constants/showInfo'
 import { motion } from 'framer-motion'
@@ -26,12 +24,10 @@ export const links: LinksFunction = () => [
   },
 ]
 
-export const loader: LoaderFunction = async () => {
+export const loader = async () => {
   const episodes = await getAllPodcastEpisodes()
 
-  return {
-    episodes,
-  }
+  return json({ episodes })
 }
 
 function SocialIcon({ icon: Icon, href }: { icon: IconType; href: string }) {
@@ -43,7 +39,7 @@ function SocialIcon({ icon: Icon, href }: { icon: IconType; href: string }) {
 }
 
 export default function Index() {
-  const { episodes } = useLoaderData<{ episodes: PodcastEpisode[] }>()
+  const { episodes } = useLoaderData<typeof loader>()
   const isHydrated = useIsHydrated()
 
   return (

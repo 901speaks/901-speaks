@@ -1,9 +1,8 @@
-import { LoaderFunction } from '@remix-run/node'
 import RSS from 'rss'
 import { podcastDescription } from '~/constants/showInfo'
 import { getAllPodcastEpisodes } from '~/lib/contentful.server'
 
-export const loader: LoaderFunction = async () => {
+export const loader = async () => {
   const TWO_DAYS_IN_MINUTES = 60 * 24 * 2
   const initialFeed = new RSS({
     categories: ['Comedy', 'Stories'],

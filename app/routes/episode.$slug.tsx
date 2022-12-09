@@ -1,12 +1,10 @@
-import { json, LoaderFunction, MetaFunction } from '@remix-run/node'
+import { json, LoaderArgs, MetaFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 import dayjs from 'dayjs'
 import { FaCalendar, FaStopwatch, FaGlobeAmericas } from 'react-icons/fa'
-import { Episode } from '~/components/Episodes/Episode'
 import { getPodcastEpisodeBySlug } from '~/lib/contentful.server'
-import { PodcastEpisode } from '~/types/conteful'
 
-export const loader: LoaderFunction = async ({ params }) => {
+export const loader = async ({ params }: LoaderArgs) => {
   const episodeSlug = params.slug
 
   if (!episodeSlug) {
@@ -43,7 +41,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 }
 
 export default function Episodes() {
-  const { episode } = useLoaderData<{ episode: PodcastEpisode }>()
+  const { episode } = useLoaderData<typeof loader>()
 
   return (
     <section className="container mx-auto mt-16 px-8">
