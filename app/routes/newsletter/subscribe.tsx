@@ -59,7 +59,7 @@ export function NewsletterSignupForm() {
 
   return (
     <section className="rounded-md bg-base-300 pb-12 shadow-md">
-      <div className="mb-12 bg-accent-focus py-8 text-center text-white">
+      <div className="mb-12 bg-primary py-8 text-center text-white">
         <div className="mb-4 text-4xl font-bold uppercase">
           Join the Newsletter
         </div>

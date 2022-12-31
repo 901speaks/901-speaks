@@ -18,6 +18,15 @@ module.exports = {
     }),
   ],
   daisyui: {
-    themes: ['night'],
+    themes: [
+      {
+        night: {
+          // eslint-disable-next-line
+          ...require('daisyui/src/colors/themes')['[data-theme=night]'],
+          primary: '#102750',
+          secondary: '#F6B067',
+        },
+      },
+    ],
   },
 }

@@ -4,7 +4,7 @@ import { SubscribeDropdown } from '../shared/SubscribeDropdown'
 
 export function Header() {
   return (
-    <header className="navbar bg-base-100">
+    <header className="navbar bg-secondary p-4 text-primary">
       <motion.div
         className="navbar-start"
         initial={{ y: -200 }}
@@ -13,8 +13,8 @@ export function Header() {
           bounce: 0,
         }}
       >
-        <Link className="btn btn-ghost text-2xl normal-case" to="/">
-          901 Speaks
+        <Link to="/">
+          <img src="/logo.png" alt="901 Speaks Logo" className="h-16" />
         </Link>
       </motion.div>
       <div className="navbar-center hidden lg:flex">

@@ -45,7 +45,7 @@ export default function Index() {
 
   return (
     <>
-      <div className="homepage-hero py-8">
+      <div className="homepage-hero py-16">
         <div className="mx-auto flex flex-col items-center justify-start p-4 md:container  md:flex-row md:justify-center md:px-16">
           <motion.img
             initial={isHydrated ? { x: -200, scale: 0.4, opacity: 0.5 } : false}
